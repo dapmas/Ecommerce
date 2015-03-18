@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--
+<script>
+function display()
+{
+if(document.getElementById("username").value && document.getElementById("name").value && document.getElementById("pwd1").value && document.getElementById("pwd2").value && document.getElementById("address").value && document.getElementById("phone").value)
+	{
+        //Check from database if user_name or email id already exists
+	if(document.getElementById("pwd1").value==document.getElementById("pwd2").value)
+		{
+		if (document.getElementById("cust").checked)
+			{
+			//Add to customer database
+			alert("Customer Sign-up successfully complete!");
+			window.location.replace("/website/login");
+			}
+		else if (document.getElementById("merch").checked)
+			{
+			//Add to merchant database
+			alert("Merchant Sign-up successfully complete!");
+			window.location.replace("/website/login");
+			}
+		else
+			{
+			alert("Please select the User Type");
+			}
+		}
+	else
+		{
+		alert("Passwords do not match. Try again.");
+		}
+	}
+else
+	{
+	alert("Please enter all the required details");
+	}
+}
+</script>
+-->
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <title>E-Commerce Website: Signup</title>
+  <link href="/static/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="wrapper">
+<div class="warpper-top">
+<div class="top-sh1"></div>
+<div class="banner-area">
+<div class="banner-left-sh1"></div>
+<div class="banner-bg1">
+<div class="banner-txt">
+<div class="banner-txt-left">
+<h1> E-Commerce<br>
+<span>Website</span> </h1>
+</div>
+</div>
+<div class="nav-sh"></div>
+</div>
+<div class="banner-right-sh1"></div>
+</div>
+</div>
+<div class="warpper-mid">
+<div class="mid-gap"></div>
+<div class="mid-left">
+<h2 style="padding: 0px 0px 5px 30px;">Welcome to <span>E-Commerce website</span></h2>
+<br><br>
+</div>
+<div>
+<div class="mid-left" style="padding: 0px 0px 10px 40px">
+<form method="post" action="." >{% csrf_token %}
+<p  style="padding: 10px 0px 5px 30px;">
+<i>
+<font size="3" font face="verdana" >
+{% for b in form %}
+
+    {{b.errors}}
+{% endfor %}
+</font>
+</i>
+</p>
+
+User Name:<br> {{ form.user_name }}<br>
+<br>
+Name:<br> {{ form.name }}<br>
+<br>
+Password: <br>{{ form.pwd1 }}<br>
+<br>
+Retype Password: <br>{{ form.pwd2 }}<br>
+<br>
+E-Mail ID:<br> {{ form.email }}<br>
+<br>
+Address:<br> {{ form.address }}<br>
+<br>
+Phone:<br> {{ form.phone }}<br>
+<br>
+Type: 
+{{ form.type1 }}
+<br>
+<br>
+ <input class="button" type="submit" value="Sign Up" /> 
+
+<a class="button" href="/website/login" >Login</a>
+</form>
+</div>
+</div>
+</body>
+</html>

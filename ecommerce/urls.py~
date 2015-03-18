@@ -1,0 +1,12 @@
+from django.conf.urls import patterns,include,url
+from django.contrib import admin
+from website.views import *
+
+
+admin.autodiscover()
+
+urlpatterns = patterns('',url(r'^website/$',include("website.urls")),url(r"^admin/",include(admin.site.urls)),
+ url(r'^website/index/$',index),url(r'^website/login/$',login),url(r'^website/signup/$',signup),url(r'^website/about_us_cust/$',about_us_cust),
+url(r'^website/about_us_merch/$',about_us_merch),url(r'^website/add_product/$',add_product),url(r'^website/customer_home/$',customer_home),url(r'^website/merchant_home/$',merchant_home),url(r'^website/my_products/$',my_products),url(r'^website/order/$',order),url(r'^website/products/$',products),url(r'^website/shipping_details/$',shipping_details),url(r'^website/delete_product/$',delete_product),url(r'^website/add_order/$',add_order),url(r'^website/delete_order/$',delete_order),url(r'^website/delete_order/$',delete_order),
+)
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <title>E-Commerce Website: Product List</title>
+  <link href="/static/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="wrapper">
+<div class="warpper-top">
+<div class="top-sh1"></div>
+<div class="banner-area">
+<div class="banner-left-sh1"></div>
+<div class="banner-bg1">
+<div class="banner-txt">
+<div class="banner-txt-left">
+<h1> Merchant<br>
+<span>Home</span> </h1>
+</div>
+</div>
+<div class="nav-area">
+<ul class="navigation">
+  <li><a href="/website/merchant_home">Home</a></li>
+  <li><a href="/website/add_product">New Product</a></li>
+  <li><a href="/website/my_products">Product List</a></li>
+  <li><a href="/website/delete_product">Delete Product</a></li>
+  <li><a href="/website/about_us_merch">About us</a></li>
+  <li><a href="/website/index">Logout</a></li>
+</ul>
+</div>
+<div class="nav-sh"></div>
+</div>
+<div class="banner-right-sh1"></div>
+</div>
+</div>
+<div class="warpper-mid">
+<div class="mid-gap"></div>
+<div class="mid-left">
+<h2 style="padding: 20px 0px 5px 30px;">Product <span>List</span></h2></div>
+{% if produc %}
+	<table border="1" width="100%" style="padding: 20px 0px 5px 30px;">
+	<tr>
+	<th width="10"> Product ID </th>	
+	<th width="150"> Product Name </th>
+	<th width="10"> Price </th>
+	<th width="10"> Discount </th>
+	<th width="10"> No. Available </th>
+	<th width="10"> Delete </th>
+	</tr>
+
+	<ul>
+	{% for prod in produc %}
+	<tr>
+	<td width="10"> {{ prod.prod_id }} </td>
+	<td width="150"> {{ prod.prod_name }} </td>
+	<td width="10"> {{ prod.price }} </td>
+	<td width="10"> {{ prod.discount }} </td>
+	<td width="10"> {{ prod.number }} </td>
+	<td> <a class=button href="/website/delete_product">Delete</a></td>
+	</tr>
+	{% endfor %}
+	</ul>
+	</table>
+{% else %}
+<p  style="padding: 10px 0px 5px 30px;">
+<i>
+<font size="3" font face="verdana" >No Products Added!
+</font>
+</i>
+</p>
+{% endif %}
+
+
+<div class="warpper-bot">
+<div class="footer-left">
+<ul class="footer-nav">
+  <li style="border: medium none ;"><a href="/website/merchant_home">Home</a></li>
+  <li><a href="/website/add_product">New Product</a></li>
+  <li><a href="/website/my_products">Product List</a></li>
+  <li><a href="/website/delete_product">Delete Product</a></li>
+  <li><a href="/website/about_us_merch">About us</a></li>
+  <li><a href="/website/index">Logout</a></li>
+
+</ul>
+</div>
+<div class="footer-right">
+</p>
+</div>
+</div>
+</body>
+</html>

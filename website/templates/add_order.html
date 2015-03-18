@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script>
+function display()
+{
+if(document.getElementById("prodname").value && document.getElementById("price").value && document.getElementById("no").value && document.getElementById("discount").value)
+	{
+        //Check from database if user_name or email id already exists
+	window.location.replace("/website/my_products");
+	}
+else
+	{
+	alert("Please enter all the required details");
+	}
+}
+</script>
+
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <title>E-Commerce Website: Add To Order</title>
+  <link href="/static/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="wrapper">
+<div class="warpper-top">
+<div class="top-sh1"></div>
+<div class="banner-area">
+<div class="banner-left-sh1"></div>
+<div class="banner-bg1">
+<div class="banner-txt">
+<div class="banner-txt-left">
+<h1> Customer<br>
+<span>Home</span> </h1>
+</div>
+</div>
+<div class="nav-area">
+<ul class="navigation">
+  <li><a href="/website/customer_home">Home</a></li>
+  <li><a href="/website/products">Product List</a></li>
+  <li><a href="/website/order">Current Order</a></li>
+  <li><a href="/website/shipping_details">Shipping Details</a></li>
+  <li><a href="/website/about_us_cust">About us</a></li>
+  <li><a href="/website/index">Logout</a></li>
+</ul>
+</div>
+<div class="nav-sh"></div>
+</div>
+<div class="banner-right-sh1"></div>
+</div>
+</div>
+<div class="warpper-mid">
+<div class="mid-gap"></div>
+<div class="mid-left">
+<h2 style="padding: 0px 0px 5px 30px;">Add to <span>Order</span></h2>
+<br>
+</div>
+<div>
+<div class="mid-left" style="padding: 0px 0px 10px 40px">
+<form method="post" action="." >{% csrf_token %}
+<p  style="padding: 10px 0px 5px 30px;">
+<i>
+<font size="3" font face="verdana" >
+{% for b in form %}
+    {{b.errors}}
+{% endfor %}
+</font>
+</i>
+</p>
+Product ID:<br> {{ form.prod_id }}<br>
+Quantity:<br> {{ form.quantity }}<br>
+<br>
+<input class="button" type="submit" value="Add Order">
+<a class="button" href="/website/products" >Cancel</a>
+</form>
+</div>
+</div>
+<div class="warpper-bot">
+<div class="footer-left">
+<ul class="footer-nav">
+  <li style="border: medium none ;"><a href="/website/customer_home">Home</a></li>
+  <li><a href="/website/products">Product List</a></li>
+  <li><a href="/website/order">Current Order</a></li>
+  <li><a href="/website/shipping_details">Shipping Details</a></li>
+  <li><a href="/website/about_us_cust">About us</a></li>
+  <li><a href="/website/index">Logout</a></li>
+</ul>
+</div>
+<div class="footer-right">
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>

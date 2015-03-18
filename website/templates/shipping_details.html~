@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <title>E-Commerce Website: Shipping Details</title>
+  <link href="/static/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="wrapper">
+<div class="warpper-top">
+<div class="top-sh1"></div>
+<div class="banner-area">
+<div class="banner-left-sh1"></div>
+<div class="banner-bg1">
+<div class="banner-txt">
+<div class="banner-txt-left">
+<h1> Customer<br>
+<span>Home</span> </h1>
+</div>
+</div>
+<div class="nav-area">
+<ul class="navigation">
+  <li><a href="/website/customer_home">Home</a></li>
+  <li><a href="/website/products">Product List</a></li>
+  <li><a href="/website/order">Current Order</a></li>
+  <li><a href="/website/shipping_details">Shipping Details</a></li>
+  <li><a href="/website/about_us_cust">About us</a></li>
+  <li><a href="/website/index">Logout</a></li>
+</ul>
+</div>
+<div class="nav-sh"></div>
+</div>
+<div class="banner-right-sh1"></div>
+</div>
+</div>
+<div class="warpper-mid">
+<div class="mid-gap"></div>
+<div class="mid-left">
+<h2 style="padding: 20px 0px 5px 30px;">Shipping <span>Details</span></h2></div>
+{% if produc %}
+	<table border="1" width="100%" style="padding: 20px 0px 5px 30px;">
+	<tr>
+	<th width="150"> Company Name </th>
+	<th width="150"> Address </th>
+	<th width="10"> No. Sold </th>
+	<th width="10"> Phone </th>
+	<th width="10"> Rating </th>
+	</tr>
+	<ul>
+	{% for prod in produc %}
+	<tr>
+	<td width="150"> {{ prod.ship_name }} </td>
+	<td width="150"> {{ prod.Address }} </td>	
+	<td width="10"> {{ prod.no_sold }} </td>
+	<td width="10"> {{ prod.phone }} </td>
+	</tr>
+	{% endfor %}
+	</ul>
+	</table>
+{% else %}
+<p  style="padding: 10px 0px 5px 30px;">
+<i>
+<font size="3" font face="verdana" >No Products Added!
+</font>
+</i>
+</p>
+{% endif %}
+<div class="warpper-bot">
+<div class="footer-left">
+<ul class="footer-nav">
+  <li style="border: medium none ;"><a href="/website/customer_home">Home</a></li>
+  <li><a href="/website/products">Product List</a></li>
+  <li><a href="/website/order">Current Order</a></li>
+  <li><a href="/website/shipping_details">Shipping Details</a></li>
+  <li><a href="/website/about_us_cust">About us</a></li>
+  <li><a href="/website/index">Logout</a></li>
+</ul>
+</div>
+<div class="footer-right">
+</p>
+</div>
+</div>
+</body>
+</html>

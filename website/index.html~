@@ -1,0 +1,45 @@
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <title>E-Commerce Website</title>
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="wrapper">
+<div class="warpper-top">
+<div class="top-sh1"></div>
+<div class="banner-area">
+<div class="banner-left-sh1"></div>
+<div class="banner-bg1">
+<div class="banner-txt">
+<div class="banner-txt-left">
+<h1> E-Commerce<br>
+<span>Website</span> </h1>
+</div>
+</div>
+<div class="nav-sh"></div>
+</div>
+<div class="banner-right-sh1"></div>
+</div>
+</div>
+<div class="warpper-mid">
+<div class="mid-gap"></div>
+<div class="mid-left">
+<h2 style="padding: 0px 0px 5px 30px;">Welcome to <span>E-Commerce website</span></h2>
+<p style="padding: 10px 0px 5px 30px;">
+<i>
+<font size="3" font face="verdana" > Buy and sell your products. All in one place! A convenient way for both merchants and customers to sell and buy goods. You don't need to go to your local store anymore looking for what you need. Your product is just a click away. Want to sell a product but don't know how to? Simply register yourself as a merchant on our website and put up your products for sale!
+</font>
+</i>
+</p>
+</div>
+<div class="mid-right">
+<p  style="padding: 50px 0px 5px 30px;"> 
+<a class="button" href="login.html" >Login</a>
+<a class="button" href="signup.html" >Signup</a>
+</p>
+</div>
+</body>
+</html>
